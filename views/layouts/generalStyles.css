@@ -1,0 +1,120 @@
+
+body
+{
+	font-family: Comic Sans MS, Comic Sans;
+	
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: bold;
+	color:#8B4513;
+	padding: 10px;
+}
+
+img {
+	border-radius: 8px
+	
+}
+
+.mediumImage
+{
+	width:600px;
+	height:500px;
+
+}
+
+.largeImage{
+	width: 700px;
+	height:600px;
+}
+
+p {
+	color:#8B4513;
+	font-size: 20px;
+}
+
+#row
+{
+	display: flex;
+	width: 100%;
+	flex-flow: row wrap;
+}
+
+form{
+	padding:10px;
+	border:2px solid ;
+	border-color:#8B4513;
+	background-color:#B0E0E6;
+}
+
+div{
+	padding: 10px;
+}
+
+label
+{
+	padding:2px;
+
+}
+
+
+input
+{
+	padding:3px;
+
+}
+
+button
+{
+	background-color: #CD853F;
+	color: white;
+	font-size:20px;
+	padding:5px;
+}
+
+h2
+{
+	color: #2E8B57;
+}
+
+h3
+{
+	color: DarkGreen;
+}
+
+table
+{
+	border: 4px solid;
+	border-color:#3CB371;
+	margin-right:20px;
+	margin-top:5px;
+}
+
+th,td
+{
+	border: 2px solid;
+	border-color:#3CB371;
+	padding: 5px;
+
+}
+
+#submit
+{
+	background-color: #CD853F;
+	color: white;
+	font-size:20px;
+	padding:10px;
+	margin-bottom:2px;
+	margin-top:4px;
+}
+.container
+{
+	float:left; 
+	width:50%;
+}
+.container2
+{
+	float:right; 
+	width:50%;
+}
