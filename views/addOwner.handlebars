@@ -1,0 +1,31 @@
+	
+		<!-- Page Information-->
+		<div class="container">	
+			<h1 class="Title">
+			Add New Owner
+			</h1>
+			<p>This page adds the information for a new owner who is responsible for a dog that exists in our system.</p>
+				<div id="row">
+					<form id ="form1" method="post" action="flip3.engr.oregonstate.edu/addCustomer">
+						<h3> Select Customer from drop down: </h3>
+						<label for="custDrop"> Existing Customer: </label>
+						<select id="custDrop" name="custDrop">
+							{{#each data}}
+							<option value={{this.dogID}}> {{this.dogName}} {{this.breed}} {{this.age}}</option>
+							{{/each}}
+						</select><br>
+					</form>
+				</div>
+				
+			<div id="row">
+				<h2>Customer Information</h2>
+			</div>
+			<div id="tableRow">
+				
+			</div>
+			
+		</div>
+		<div id="container2">
+			<img src="./images/IMG_7204.jpeg" class="mediumImage"/>
+		</div>
+		<script src="customerContact.js"></script>

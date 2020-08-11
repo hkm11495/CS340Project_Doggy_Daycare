@@ -1,0 +1,31 @@
+	
+		<!-- Page Information-->
+			<h1 class="Title">
+			Dog Info
+			</h1>
+			
+			<div id="row">
+				<form id ="form1" method="post">
+					<h3> Select Customer from drop down: </h3>
+					<label for="custDrop"> Existing Customer: </label>
+					<select id="custDrop" name="custDrop">
+						{{#each data}}
+						<option value={{this.customerID}}> {{this.firstName}} {{this.lastName}} {{this.phoneNumber}} {{this.email}}</option>
+						{{/each}}
+					</select><br>
+					<select id="dropDown2" name="dropDown2">
+					</select><br>
+				</form>
+			</div>
+			<div id="row">
+				<div id="tableRow1">
+					<h2>Dog's Stays</h2>
+				
+				</div>
+				<div id="tableRow2">
+					<h2>Dog's Activities</h2>
+				
+				</div>
+			</div>
+
+		<script src="dog_stays_activities.js"></script>

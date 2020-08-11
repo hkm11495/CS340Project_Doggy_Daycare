@@ -1,0 +1,92 @@
+
+		<!-- Page Information-->
+		<div id="row">	
+			<h1 class="Title">
+			Doggy Daycare New Customers Sign Up Page
+			</h1>
+		</div>
+		<div id="row">	
+			<p class="paragraph">
+			This page is to register new customers as well as their dogs into the system.
+			</p>
+			
+		</div>
+			<h2> Add New Customer</h2>
+			<div id="row">
+				<form name="custForm" id ="form1" >
+					<h3> Customer 1: </h3>
+					
+					<label for="firstName"> First Name: </label>
+					<input type="text" id="firstName" name="firstName" required /><br>
+					
+					<label for="lastName"> Last Name: </label>
+					<input type="text" id="lastName" name="lastName" required /><br>
+					
+					<label for="address"> Address: </label>
+					<input type="text" id="address" name="address" required /><br>
+					
+					<label for="city"> City: </label>
+					<input type="text" id="city" name="city" required /><br>
+					
+					<label for="state"> State:</label>
+					<select id="state" name="state" required ></select><br>
+					
+					<label for="zipcode"> Zipcode: </label>
+					<input type="text" id="zipcode" name="zipcode" required /><br>
+					
+					<label for "phoneNumber"> Phone Number: </label>
+					<input type="text" id="phoneNumber" name="phoneNumber" required /><br>
+					
+					<label for "email"> Email: </label>
+					<input type="text" id="email" name="email" required /><br>
+				</form>
+			</div>
+			
+			<div id="addOwnerForm">
+				<button id="addCustomer"> Add Another Owner </button>
+			</div>
+			
+			<div id="row">
+				<form name="dogForm" id ="dog1" method="post">
+					<h3> Dog 1: </h3>
+					
+					<label for="dogName"> Name: </label>
+					<input type="text" id="dogName" name="dogName"/><br>
+					
+					<label for="age"> Age: </label>
+					<input type="number" id="age" name="age"/><br>
+					
+					<label for="breed"> Breed: </label>
+					<input type="text" id="breed" name="breed"/><br>
+				</form>
+			</div>
+			
+			<div id="addDogForm">
+				<button id="addDog"> Add Another Dog </button>
+			</div>
+			
+			<div id="submitData">
+				<p> Validate all information is correct and click submit button to store information!</p>
+				<button id="submitNew"> Submit </button>
+			</div>
+	<script src="addCustomerForm.js"></script>
+		<script src="submitForms.js"></script>
+	<script>
+	// Populate states 
+	var statesArray = [
+	"AK","AL","AR","AZ","CA","CO","CT","DE","FL","GA",
+	"HI","IA","ID","IL","IN","KS","KY","LA","MA","MD",
+	"ME","MI","MN","MO","MS","MT","NC","ND","NE","NH",
+	"NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC",
+	"SD","TN","TX","UT","VA","VT","WA","WI","WV","WY"]; 
+
+	select = document.getElementById('state')
+
+		for (var i = 0; i < statesArray.length; i++) { 
+			var optn = statesArray[i]; 
+			var el = document.createElement("option"); 
+			el.textContent = optn; 
+			el.value = optn; 
+			select.appendChild(el); 
+		} 
+	</script>

@@ -1,0 +1,89 @@
+  
+<!--Menu Bar -->
+		
+		<!-- Page Information-->
+		<div id="row">
+				<h1 class="Title">
+				Doggy Daycare Activity Schedule
+				</h1>
+		</div>
+		<div id="row">
+				<p class="paragraph">
+				This page show the scheduled activities for the week and which dogs will particiapte in which activities.
+				This page can also add/delete activities to the schedule.
+				</p>
+		</div>
+		<div id="row">
+				<h2>Choose Activity to see details</h2>
+		</div>
+		<div id="row">
+				<form id="chooseActivity">
+						<label for="dropDown1"> Activity Name: </label>
+						<select id="dropDown1" name="dropDown1">
+							{{#each data}}
+								<option value="{{this.activityName}}">{{this.activityName}}</option>
+							{{/each}} 
+						</select><br>
+				</form>
+			<div id="tableDiv">
+				
+			</div>
+		</div>
+		<div id="row">
+			<div>
+				<h2>Create New Activity</h2>
+				<form id ="form1" method="post" action="/newActivityLookUp">
+					<h3>Activity Form</h3>
+					<label for="activityName"> Activity Name: </label>
+					<input type="text" id="activityName" name="activityName"><br>
+					<label for="activityDescription">Activity Description:</label>
+					<input type="text" id="activityDescription" name="activityDescription"/><br>
+					<label for="activityCost">Activity Cost ($):</label>
+					<input type="number" id="activityCost" name="activityCost"/><br>
+					<label for="activityCap">Activity Capacity:</label>
+					<input type="number" id="activityCap" name="activityCap"/><br>
+					<label>Location: </label>
+					<div>
+						<input name="location" id="barkPark value="Bark Park" type="radio"/> Bark Park <label for="barkPark"></label><br>
+						<input name="location" id="salon" value="Salon" type="radio"/> Salon <label for="salon"></label><br>
+						<input name="location" id="kennel" value="Kennel" type="radio"/> Kennel <label for="kennel"></label><br>
+						<input name="location" id="breakRoom" value="Break Room" type="radio"/> Break Room <label for="breakRoom"></label><br>
+						<input name="location" id="headquarters" value="Headquarters" type="radio"/> Headquarters <label for="headquarters"></label><br>
+						<input name="location" id="RoomA" value="Room A" type="radio"/> Room A <label for="RoomA"></label><br>
+						<input name="location" id="RoomB" value="Room B" type="radio"/> Room B <label for="RoomB"></label><br>
+						<input name="location" id="RoomC" value="Room C" type="radio"/> Room C <label for="RoomC"></label><br>
+						<br>
+					</div>
+					<input id="submit" type="submit">
+				</form>
+			
+			</div>
+
+			<div>
+				<h2>Add New Activity to the Schedule</h2>
+				<form id ="form1" method="post" action="/submitNewActivity">
+
+					<h3>Activity Schedule Form</h3>
+					<label for="activityName"> Activity Name: </label>
+					<select id="activityName" name="activityName">
+						{{#each data}}
+							<option value="{{this.activityName}}">{{this.activityName}}</option>
+						{{/each}} 
+					</select><br>
+				
+					<label for="activityDate"> Date for Activity: </label>
+					<input type="date" id="activityDate" name="activityDate"></input><br>
+					
+					<label for="activityTime"> Time for Activity: </label>
+					<input type="time" id="activityTime" name="activityTime"></input><br>
+				
+					<label for="leadActivityCoordinator">Lead Activity Coordinator:</label>
+					<input type="text" id="leadActivityCoordinator" name="leadActivityCoordinator"/><br>
+					
+					<input id = "submit" type="submit"/>
+					
+				</form>
+			</div>
+		</div>
+		<script src="activitySchedule.js"></script>
+		<script src="filterActivities.js"></script>

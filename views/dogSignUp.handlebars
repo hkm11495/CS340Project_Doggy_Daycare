@@ -1,0 +1,119 @@
+		<!-- Page Information-->
+	
+			
+			<h1 class="Title">
+			Doggy Daycare Signup Page
+			</h1>
+				
+			<p class="paragraph">
+			This page signs a dog up for how long their stay will be (over night/day care only) and registers them for any activities the owner wants
+			the dog to participate in.
+			</p>
+			<h2>Menu:</h2>
+			<div id="row">
+
+					<table>
+						<tr>
+							<th>Daycare ($)</th>
+							<td>$20</td>
+						</tr>
+						<tr>
+							<th>Overnight ($/night)</th>
+							<td>$30</td>
+						</tr>
+					</table>
+
+					<table>
+						<tr>
+							<th> Activity Name </th>
+							<th> Cost per Activity ($)</th>
+							<th> Activity Capacity </th>
+							<th> Activity Location </th>
+							<th> Description </th>
+						</tr>
+							{{#each data.[0]}}
+						<tr>
+							<td> {{this.activityName}}	</td>
+							<td> {{this.activityCost}}	</td>
+							<td> {{this.activityCap}}	</td>
+							<td> {{this.location}}	</td>
+							<td> {{this.activityDescription}}	</td>
+						</tr>
+							{{/each}}
+					</table>
+			
+			</div>
+			<div id="row">
+	
+				<form id ="form1" method="post">
+					<h3> Select Customer from drop down: </h3>
+					<label for="custDrop"> Existing Customer: </label>
+					<select id="custDrop" name="custDrop">
+						{{#each data.[1]}}
+						<option value={{this.customerID}}> {{this.firstName}} {{this.lastName}} {{this.phoneNumber}} {{this.email}}</option>
+						{{/each}}
+					</select><br>
+					<select id="dropDown2" name="dropDown2">
+					</select><br>
+				</form>
+		
+			</div>
+			<div id="row">
+					<div>
+						<h2>Stay Sign Up</h2>
+						<form action="http://flip3.engr.oregonstate.edu:5223/submitStay" method="post">	
+							<p> Dog Selected: </p>
+							<p id="SelectedDog"></p>
+							<h3> Care Type: </h3>
+							<label for="dogID" hidden> dogID: </label>
+							<input type="number" id="dogID" name="dogID" hidden></input><br>
+							<input name="overnight" id="overnight" type="radio" value=1/> Overnight <label for="overnight"></label><br>
+							<input name="overnight" id="daycare" type="radio" value=0/> Daycare <label for="overnight"></label><br>
+
+							<h3> Stay Duration: </h3>
+							<label for="stayStart" > Start Date of Stay: </label>
+							<input type="date" id="stayStart" name="stayStart"></input><br>
+							<br>
+							<label for="stayEnd"> End Date of Stay: </label>
+							<input type="date" id="stayEnd" name="stayEnd"></input>
+							<br>
+							<br>
+							<label for="duration"> Length of Stay: </label>
+							<input type="number" id="duration" name="duration" readonly ></input>
+							<br>
+							<label for="stayCost"> Stay Cost: </label>
+							<input type="number" id="stayCost" name="stayCost" readonly ></input>
+							<br>
+							<input id="submit" type="submit"/>
+							<br>
+						</form>
+					</div>
+					<div>
+						<h2>Activity Sign Up</h2>
+						<form id="form2">
+						<h3> Signup for Activity: </h3>
+						<label for="dogID" hidden> dogID: </label>
+						<input type="number" id="dogID" name="dogID" hidden></input><br>
+						<p> Dog Selected: </p>
+						<p id="SelectedDog"></p>
+						<label for="dropDown3"> Activity Name: </label>
+						<select id="dropDown3" name="dropDown3">
+						{{#each data.[0]}}
+							<option> {{this.activityName}} </option>
+						{{/each}}
+						</select>
+						<br>
+						</form>
+					</div>
+					<div>	
+						<h2> Activities Available: </h2>
+						<div id="form3">
+						</div>
+					</div>
+
+				</div>
+	
+			
+	<script src="stay.js" ></script>
+	<script src="dogDropDown.js"></script>
+	

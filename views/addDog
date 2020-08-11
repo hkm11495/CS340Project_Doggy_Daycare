@@ -1,0 +1,30 @@
+	<!-- Page Information-->
+		<div class="container">	
+			
+			<h1 class="Title">
+			New Dog
+			</h1>
+				
+			<p class="paragraph">
+			Exisiting customer got a dog. Add their new dog to the system.
+			</p>
+			
+				<div id="row">
+					<form id ="form1" method="post" action="flip3.engr.oregonstate.edu:5223">
+						<h3> Select Customer from drop down: </h3>
+						<label for="custDrop"> Existing Customer: </label>
+						<select id="custDrop" name="custDrop">
+							{{#each data}}
+							<option value={{this.customerID}}> {{this.firstName}} {{this.lastName}}</option>
+							{{/each}}
+						</select><br>
+						<label for="dogName"></label>
+						<input type="text" id="dogName"></input>
+						<label for="age"></label>
+						<input type="number" id="age"></input>
+						<label for="breed"></label>
+						<input type="text" id="breed"></input>
+					</form>
+				</div>
+			
+		</div>
